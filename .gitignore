@@ -1,6 +1,6 @@
 # Cython build/help files
-asyncstdlib_cy/*.c
-asyncstdlib_cy/*.html
+src/asyncstdlib_cy/*.c
+src/asyncstdlib_cy/*.html
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Windows template
