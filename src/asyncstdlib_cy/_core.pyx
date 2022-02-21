@@ -45,7 +45,7 @@ cpdef object aiter(subject: AnyIterable):
     """
     if not is_aiterable(subject):
         subject = _aiter_sync(subject)
-    return __aiter__(subject)()
+    return __aiter__(subject)
 
 
 async def _aiter_sync(iterable: Iterable) -> AsyncIterator:
@@ -82,13 +82,13 @@ cdef class borrow:
     cdef object iterator
 
     def __init__(self, iterator: AsyncIterator):
-        self.iterator = __aiter__(iterator)()
+        self.iterator = __aiter__(iterator)
 
     def __aiter__(self):
         return self
 
     def __anext__(self):
-        return __anext__(self.iterator)()
+        return __anext__(self.iterator)
 
 
 def awaitify(function: Callable) -> Callable:
