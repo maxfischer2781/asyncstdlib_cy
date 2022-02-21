@@ -22,9 +22,10 @@ jobs:
         pip install './asl_temp[test]'
         mv asl_temp/unittests .
         rm -rf asl_temp
-    - name: Install dependencies
+    - name: Install compiled library
       run: |
         pip install .
+        python patch_asyncstdlib.py
     - name: Test with pytest
       run: |
         pytest --durations=0 --cov=./
