@@ -30,8 +30,8 @@ setup(
     packages=[package],
     package_dir={"": "src"},
     ext_modules=[
-        Extension(module_name(extension), [str(extension)])
-        for extension in Path(package).glob("*.pyx")
+        Extension(module_name(extension.relative_to("src")), [str(extension)])
+        for extension in Path("src", package).glob("*.pyx")
     ],
     include_package_data=True,
     package_data={"": ["*.pxd"]},
