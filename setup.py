@@ -22,6 +22,7 @@ setup(
         "Framework :: AsyncIO",
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: Implementation :: CPython",
     ],
     install_requires=[
         "asyncstdlib",
